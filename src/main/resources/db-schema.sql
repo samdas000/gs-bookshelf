@@ -1,0 +1,12 @@
+"CREATE TABLE DONOR (
+ID bigint(10) NOT NULL AUTO_INCREMENT, 
+FIRST_NAME Varchar(20), 
+LAST_NAME Varchar(20), 
+EMAIL_ID Varchar(20), 
+ADDRESS Varchar(50), 
+LOCALITY Varchar(20), 
+COUNTRY Varchar(20), 
+CITY Varchar(20), 
+LATITUDE Varchar(20), 
+LONGITUDE Varchar(20),
+PRIMARY KEY ('ID'));
