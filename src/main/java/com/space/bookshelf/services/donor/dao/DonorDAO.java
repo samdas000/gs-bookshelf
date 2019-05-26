@@ -25,7 +25,7 @@ public class DonorDAO
 	@Autowired
     public void setDataSource(final DataSource dataSource) 
 	{
-		System.out.println("initializing JDBC Template");
+		System.out.println("initializing JDBC Template" + dataSource.toString());
         jdbcTemplate = new JdbcTemplate(dataSource);
         String sql = "DROP TABLE DONOR IF EXISTS";
 		//jdbcTemplate.execute(sql);
@@ -41,7 +41,7 @@ public class DonorDAO
 				"CITY Varchar(20), " + 
 				"LATITUDE Varchar(20), " + 
 				"LONGITUDE Varchar(20))";
-		jdbcTemplate.execute(sql2);
+		//jdbcTemplate.execute(sql2);
 		System.out.println("Initialized...");
 	}
 	

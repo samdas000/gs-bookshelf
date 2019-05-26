@@ -20,7 +20,7 @@ public class DonorController
 		return "welcome donors!";
 	}
 	
-	@RequestMapping("/testadd")
+	@RequestMapping("punya/donor/add")
 	public String testAdd()
 	{
 		Donor donor = new Donor();
@@ -44,7 +44,7 @@ public class DonorController
 	
 	
 	
-	@RequestMapping("/testshow")
+	@RequestMapping("punya/donor/show")
 	public String testShow()
 	{
 		return dao.getAllDonors().toString();		
