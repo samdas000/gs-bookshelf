@@ -2,6 +2,7 @@ package com.space.bookshelf.services.donor;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,6 +20,8 @@ public class DonorController
 	{
 		return "welcome donors!";
 	}
+	
+	
 	
 	@RequestMapping("punya/donor/add")
 	public String testAdd()
@@ -39,7 +42,7 @@ public class DonorController
         donor.setLongitude("LONGITUDE");
         
 		dao.addDonor(donor);
-		return "welcome donors!!";
+		return "Added a new donor!!";
 	}
 	
 	

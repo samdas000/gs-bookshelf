@@ -21,7 +21,8 @@ public class BookController
 	{
 		Book book = new Book();
 		
-		book.setStream("ICSE");
+		book.setId("1");
+        book.setStream("ICSE");
         book.setStandard("Class-IX");
         book.setSubject("History");
         book.setAuthor("Dr Ramesh");
