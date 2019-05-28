@@ -46,7 +46,17 @@ public class BookDAO
 		
 	}
 
+	
+	
 	public List<Book> getAllBooks()
+	{
+		String sql = "SELECT * FROM BOOK";
+        RowMapper<Book> rowMapper = new BookRowMapper();
+		return this.jdbcTemplate.query(sql, rowMapper);
+	}
+
+	
+	public List<Book> getOpenRequets()
 	{
 		String sql = "SELECT * FROM BOOK";
         RowMapper<Book> rowMapper = new BookRowMapper();

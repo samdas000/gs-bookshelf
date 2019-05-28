@@ -12,6 +12,8 @@ public class Person
 	
 	private String address = "";
 	private String locality = "";
+	private String pinCode = "";
+	
 	private String city = "";	
 	private String state = "";
 	private String country = "";
@@ -94,13 +96,20 @@ public class Person
 		this.longitude = longitude;
 	}
 	
+	public String getPinCode() {
+		return pinCode;
+	}
+	public void setPinCode(String pinCode) {
+		this.pinCode = pinCode;
+	}
+	
 	
 	public String toString()
 	{
 		return id + "| " + firstName + "| " + lastName + "| " + emailId + "| " + phoneNumber 
-				+ "| " + address + "| " + locality + "| " + city + "| " + state
-				+ "| " + country + "| " + latitude + "| " + longitude + "<br/>";
-		
+				+ "| " + address + "| " + locality + "| " + pinCode + "| " + city + "| " + state
+				+ "| " + country + "| " + latitude + "| " + longitude ;
+	
 		
 	}
 

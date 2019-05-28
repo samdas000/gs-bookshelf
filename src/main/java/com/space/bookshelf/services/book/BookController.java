@@ -37,11 +37,12 @@ public class BookController
 	
 	
 	@RequestMapping("punya/book/show")
-	public String testShow()
+	public String Show()
 	{
 		return dao.getAllBooks().toString();		
 		
 	}
+	
 	
 
 }
