@@ -1,15 +1,20 @@
 package com.space.bookshelf.services.beneficiary;
 
+import java.lang.reflect.Type;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.space.bookshelf.services.beneficiary.dao.BeneficiaryDAO;
 import com.space.bookshelf.services.beneficiary.model.Beneficiary;
 import com.space.bookshelf.services.book.dao.BookDAO;
 import com.space.bookshelf.services.book.model.Book;
 import com.space.bookshelf.services.donor.dao.DonorDAO;
 import com.space.bookshelf.services.donor.model.Donor;
+import com.space.bookshelf.system.BeanUtil;
 
 @RestController
 public class BeneficiaryController 
@@ -35,7 +40,9 @@ public class BeneficiaryController
 		beneficiary.setCity("Pune");
 		beneficiary.setLatitude("LATITUDE");
 		beneficiary.setLongitude("LONGITUDE");
-        
+		
+		BeanUtil.getJSon(beneficiary);
+		
 		dao.addBeneficiary(beneficiary);
 		return "New Beneficiary added!!";
 		
@@ -46,7 +53,11 @@ public class BeneficiaryController
 	@RequestMapping("punya/beneficiary/show")
 	public String testShow()
 	{
-		return dao.getAllBeneficiaries().toString();		
+		//Type listType = new TypeToken<List<String>>() {}.getType();
+		//Gson gson = new Gson();
+		//String val = gson.toJson(dao.getAllBeneficiaries().toString());	
+		//System.out.println(val);
+		return BeanUtil.getJSon(dao.getAllBeneficiaries());
 		
 	}
 	
@@ -65,6 +76,7 @@ public class BeneficiaryController
 	@RequestMapping("punya/book/listrequest")
 	public String listrequest()
 	{
+		BeanUtil.getJSon(dao.getRequestList());		
 		return "" + dao.getRequestList();		
 		
 	}
