@@ -51,7 +51,7 @@ public class DonorController
 	@RequestMapping("punya/donor/show")
 	public String testShow()
 	{
-		return BeanUtil.getJSon(dao.getAllDonors().toString());		
+		return BeanUtil.getJSon(dao.getAllDonors());		
 		
 	}
 
