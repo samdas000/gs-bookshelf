@@ -78,7 +78,9 @@ public class BookController
 					  "USE:\"stream\"=\"<stream>\",\"standard\"=\"<standard>\",\"subject\"=\"<subject>\","
 					  + "\"author\"=\"<author>\",\"title\"=\"<title>\",\"title\"=\"<title>\"";
 		}
-		return BeanUtil.getJSon(message);
+		
+		System.out.println(message);
+		return message;
 		
 		//return "index"; later need to forward to boot catalogue page
 	}
