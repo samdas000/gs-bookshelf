@@ -39,9 +39,18 @@ public class BookController
 	@RequestMapping("punya/book/show")
 	public String Show()
 	{
-		return dao.getAllBooks().toString();		
+		//return dao.getAllBooks().toString();	
+		return BeanUtil.getJSon(dao.getAllBooks());
 		
 	}
+	
+	@RequestMapping("punya/book/{id}")
+	public String showDetails(@PathVariable("id") int id)
+	{
+		Book book =  dao.getBook(id);
+		return BeanUtil.getJSon(book);    
+	}
+	
 	
 	
 
