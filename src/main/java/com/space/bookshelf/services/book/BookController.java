@@ -66,20 +66,24 @@ public class BookController
 	        book.setEdition(edition);
 	        
 	        int i = dao.addBook(book);
+			
+			System.out.println("here");
 	        if(i==1)
 	        {
+			System.out.println("here 1");
 	        	message = "Book details added successfully";
 	        }
 			
 		}
 		else
 		{
+			System.out.println("here 2");
 			message = "Mandatory fields: stream, standard, subject, author, title, edition"+
 					  "USE:\"stream\"=\"<stream>\",\"standard\"=\"<standard>\",\"subject\"=\"<subject>\","
 					  + "\"author\"=\"<author>\",\"title\"=\"<title>\",\"title\"=\"<title>\"";
 		}
 		
-		System.out.println(message);
+		System.out.println("here 3");
 		return message;
 		
 		//return "index"; later need to forward to boot catalogue page
