@@ -54,6 +54,21 @@ public class BookDAO
         RowMapper<Book> rowMapper = new BookRowMapper();
 		return this.jdbcTemplate.query(sql, rowMapper);
 	}
+	
+	public Book getBook(int id)
+	{
+		Book book = null;
+		String sql = "SELECT * FROM BOOK WHERE ID="+id;
+        RowMapper<Book> rowMapper = new BookRowMapper();
+		List books = this.jdbcTemplate.query(sql, rowMapper);
+		if((books != null) && (books.size()==1))
+		{
+			book = (Book) books.get(0);
+		}
+		
+		return book;
+	}
+
 
 	
 	public List<Book> getOpenRequets()
