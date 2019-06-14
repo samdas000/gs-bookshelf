@@ -33,16 +33,17 @@ public class BookDAO
 	}
 	
 	
-	public void addBook(Book book) 
+	public int addBook(Book book) 
 	{
 		//Add Book	
 		
     	System.out.println("Adding Book");
 		String sql = "INSERT INTO BOOK (STREAM, STANDARD, SUBJECT, AUTHOR, TITLE, EDITION) "
 				+ "values (?, ?, ?, ?, ?, ?)";
-		jdbcTemplate.update(sql, book.getStream(), book.getStandard(), book.getSubject(),
+		int i = jdbcTemplate.update(sql, book.getStream(), book.getStandard(), book.getSubject(),
 								book.getAuthor(), book.getTitle(), book.getEdition());
 		System.out.println("Added Book");
+		return i;
 		
 	}
 
