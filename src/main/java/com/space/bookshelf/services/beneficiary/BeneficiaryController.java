@@ -76,9 +76,7 @@ public class BeneficiaryController
 	@RequestMapping("punya/book/listrequest")
 	public String listrequest()
 	{
-		BeanUtil.getJSon(dao.getRequestList());		
-		return "" + dao.getRequestList();		
-		
+		return BeanUtil.getJSon(dao.getRequestList());	
 	}
 	
 	
