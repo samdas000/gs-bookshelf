@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.space.bookshelf.services.donor.dao.DonorDAO;
 import com.space.bookshelf.services.donor.model.Donor;
+import com.space.bookshelf.system.BeanUtil;
 
 @RestController
 public class DonorController 
@@ -50,7 +51,7 @@ public class DonorController
 	@RequestMapping("punya/donor/show")
 	public String testShow()
 	{
-		return dao.getAllDonors().toString();		
+		return BeanUtil.getJSon(dao.getAllDonors().toString());		
 		
 	}
 
