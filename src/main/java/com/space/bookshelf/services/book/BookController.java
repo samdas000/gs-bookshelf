@@ -22,7 +22,7 @@ public class BookController
 	private BookDAO dao;
 	
 	
-	@RequestMapping("/punya/book/add_old")
+	@RequestMapping(path="/punya/book/add_old")
 	public String getListofBooks_old()
 	{
 		Book book = new Book();
@@ -42,7 +42,7 @@ public class BookController
 	}
 	
 	
-	@RequestMapping("/punya/book/add")
+	@RequestMapping(path="/punya/book/add")
 	public String getListofBooks(@RequestParam(name="stream") String stream,
 			@RequestParam(name="standard") String standard,
 			@RequestParam(name="subject") String subject,
