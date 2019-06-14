@@ -51,6 +51,7 @@ public class BookController
 			@RequestParam(name="edition") String edition)
 	{
 		Book book = new Book();
+		System.out.println("here 0");
 		
 		String message = "";
 		
